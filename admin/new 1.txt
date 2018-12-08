@@ -1,0 +1,53 @@
+ select 'grant insert,update,select,delete on employees to '||username||';' from all_users;
+
+grant insert,update,select,delete on employees to XS$NULL;
+grant insert,update,select,delete on employees to USER6;
+grant insert,update,select,delete on employees to USER5;
+grant insert,update,select,delete on employees to USER4;
+grant insert,update,select,delete on employees to USER3;
+grant insert,update,select,delete on employees to USER2;
+grant insert,update,select,delete on employees to USER1;
+grant insert,update,select,delete on employees to APEX_040000;
+grant insert,update,select,delete on employees to APEX_PUBLIC_USER;
+grant insert,update,select,delete on employees to FLOWS_FILES;
+grant insert,update,select,delete on employees to HR;
+
+'GRANTINSERT,UPDATE,SELECT,DELETEONEMPLOYEESTO'||USERNAME||';'
+--------------------------------------------------------------------------------
+grant insert,update,select,delete on employees to MDSYS;
+grant insert,update,select,delete on employees to ANONYMOUS;
+grant insert,update,select,delete on employees to XDB;
+grant insert,update,select,delete on employees to CTXSYS;
+grant insert,update,select,delete on employees to APPQOSSYS;
+grant insert,update,select,delete on employees to DBSNMP;
+grant insert,update,select,delete on employees to ORACLE_OCM;
+grant insert,update,select,delete on employees to DIP;
+grant insert,update,select,delete on employees to OUTLN;
+grant insert,update,select,delete on employees to SYSTEM;
+grant insert,update,select,delete on employees to SYS;
+
+revoke update,delete on employees from XS$NULL;
+revoke update,delete on employees from USER6;
+revoke update,delete on employees from USER5;
+revoke update,delete on employees from USER4;
+revoke update,delete on employees from USER3;
+revoke update,delete on employees from USER2;
+revoke update,delete on employees from USER1;
+revoke update,delete on employees from APEX_040000;
+revoke update,delete on employees from APEX_PUBLIC_USER;
+revoke update,delete on employees from FLOWS_FILES;
+revoke update,delete on employees from HR;
+
+'REVOKEUPDATE,DELETEONEMPLOYEESFROM'||USERNAME||';'
+----------------------------------------------------------------------
+revoke update,delete on employees from MDSYS;
+revoke update,delete on employees from ANONYMOUS;
+revoke update,delete on employees from XDB;
+revoke update,delete on employees from CTXSYS;
+revoke update,delete on employees from APPQOSSYS;
+revoke update,delete on employees from DBSNMP;
+revoke update,delete on employees from ORACLE_OCM;
+revoke update,delete on employees from DIP;
+revoke update,delete on employees from OUTLN;
+revoke update,delete on employees from SYSTEM;
+revoke update,delete on employees from SYS;
