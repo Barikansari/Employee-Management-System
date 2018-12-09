@@ -92,7 +92,7 @@ $query = mysqli_query($conn,$q);
           <div  class="row m-auto">
 			<div class="col-md-5"><button class="btn btn-success col-lg-12" name="done">Add</button>
 			</div>
-			<div class="col-md-5"><a href="display.php"><input type="button" name="" value="Back to records" class="btn btn-danger col-lg-12"></a></div>
+			<div class="col-md-5"><a href="dashboard.php"><input type="button" name="" value="Back to records" class="btn btn-danger col-lg-12"></a></div>
 			</div>
 		   </div>
 	</form>

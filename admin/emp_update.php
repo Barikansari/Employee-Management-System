@@ -1,23 +1,23 @@
 <?php
 
 session_start();
-//if(!$_SESSION['name'])
-//{
-//header("location:login.php");
-//}
+if(!$_SESSION['username'])
+	{
+		header("location:../index.php");
+	}
 
 
 include 'conn.php';
 
 $id = $_GET['id'];
-$name = ucfirst($_POST['name']);
-$age = $_POST['age'];
-$salary = $_POST['salary'];
-$qualification = ucfirst($_POST['qualification']);
-$dob = date("Y-m-d",strtotime($_POST['dob']));
-$doj = date("Y-m-d",strtotime($_POST['doj']));
-$date_of_birth = $dob;
-$date_of_join = $doj;
+//$name = ucfirst($_POST['name']);
+//$age = $_POST['age'];
+//$salary = $_POST['salary'];
+//$qualification = ucfirst($_POST['qualification']);
+//$dob = date("Y-m-d",strtotime($_POST['dob']));
+//$doj = date("Y-m-d",strtotime($_POST['doj']));
+//$date_of_birth = $dob;
+//$date_of_join = $doj;
 
 $q="select * from employee where id = $id";
 $query = mysqli_query($conn,$q);
@@ -68,7 +68,7 @@ $res=mysqli_fetch_array($query);
 				<div class="col-md-3"><button class="btn btn-success" name="done">update</button></div>
          
 			    <div class="col-md-3"><input type="button" class="btn btn-danger" name="delete" value="Delete" onclick="deleteme(<?php $_SESSION['id'] = $id; ?>)"></div>
-			    <div class="col-md-3"><button class="btn btn-success" name="view">attendance</button></div>
+			    <!--<div class="col-md-3"><button class="btn btn-success" name="view">attendance</button></div>-->
 
 	<script type="text/javascript">
 		
@@ -81,34 +81,46 @@ function deleteme(delid)
 }
 
 	</script>
-		    </div><br>
-		    <a href="display.php"><input type="button" name="" value="Back to records" class="btn btn-primary col-lg-12"></a>
+			    <a href="dashboard.php"><input type="button" name="" value="Back to records" class="btn btn-primary col-lg-12"></a>
+		
+		    </div>
 		</div>
 	</form>
 </div>
 <?php
-
+include 'conn.php';
+if( isset( $_GET['id'])){
+$id = $_GET['id'];
+$name = ucfirst($_POST['name']);
+$age = $_POST['age'];
+$salary = $_POST['salary'];
+$qualification = ucfirst($_POST['qualification']);
+$dob = date("Y-m-d",strtotime($_POST['dob']));
+$doj = date("Y-m-d",strtotime($_POST['doj']));
+$date_of_birth = $dob;
+$date_of_join = $doj;
 
 if(isset($_POST['done']))
 {
-$q2="update employee set name = '$name' , age = $age , salary = $salary , qualification = '$qualification' , date_of_birth = '$date_of_birth' , date_of_join = '$date_of_join' where id = $id";
+$q2="update employee set name = '$name' , age = '$age' , salary = '$salary' , qualification = '$qualification' , date_of_birth = '$date_of_birth' , date_of_join = '$date_of_join' where id = $id";
 mysqli_query($conn,$q2);
-//header("location:display.php");
-header("refresh:0");
-}
 
+header("location:dashboard.php");
+//header("refresh:0");
+}
+}
 if(isset($_POST['delete']))
 {
 	$_SESSION['id'] = $id;
 	header("location:delete.php");
 }
 
-if (isset($_POST['view'])) {
+/*if (isset($_POST['view'])) {
 
 $_SESSION['id'] = $id;
 	header("location:attendance1.php");
 
-}
+} */
 ?>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 </body>
