@@ -23,7 +23,7 @@
 <div>
 	<div class="col-lg-12"><br>
 		<div class="row">
-		 <a href="addemp.php" class="col-lg-3"><button class="btn btn-success col-lg-3">Add</button></a> 
+		 <a href="addemp.php" class="col-lg-3"><button class="btn btn-success col-lg-6">Add Employee</button></a> 
 		<h3 class="col-lg-6">Displaying Employee Records</h3>
        </div><br>
 		<table class="table table-stripped table-hover table-bordered">
@@ -57,8 +57,8 @@ while ($res = mysqli_fetch_array($query)) {
 				<th><?php echo $res['qualification'] ?></th>
 				<th><?php echo $res['date_of_birth'] ?></th>
 				<th><?php echo $res['date_of_join'] ?></th>
-				<th><a  href="emp_update.php?id=<?php echo $res['id']; ?>" class="text-white"><button class="btn btn-success">View</button></a>
-				<a  href="attendance1.php?id=<?php echo $res['id']; ?>" class="text-white"><button class="btn btn-success">attendance</button></a></th>
+				<th><a  href="emp_update.php?id=<?php echo $res['id']; ?>" class="text-white"><button class="btn btn-success">Edit</button></a>
+				<a  href="attendance1.php?id=<?php echo $res['id']; ?>" class="text-white"><button class="btn btn-success">View attendance</button></a></th>
 				
 			</tr>
 <?php }

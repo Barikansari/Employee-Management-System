@@ -54,7 +54,7 @@ while ($res = mysqli_fetch_array($query)) {
 				<th><?php echo $res['qualification'] ?></th>
 				<th><?php echo $res['date_of_birth'] ?></th>
 				<th><?php echo $res['date_of_join'] ?></th>
-				<th><a  href="emp_update.php?id=<?php echo $res['id']; ?>" class="text-white"><button class="btn btn-success">View</button></a></th>
+				<th><a  href="manage_attendance.php?id=<?php echo $res['id']; ?>" class="text-white"><button class="btn btn-success">Manage Attendance</button></a></th>
 			</tr>
 <?php }
 ?>

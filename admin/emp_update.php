@@ -89,7 +89,7 @@ function deleteme(delid)
 </div>
 <?php
 include 'conn.php';
-if( isset( $_GET['id'])){
+if( isset ($_POST['done'])){
 $id = $_GET['id'];
 $name = ucfirst($_POST['name']);
 $age = $_POST['age'];
@@ -99,7 +99,7 @@ $dob = date("Y-m-d",strtotime($_POST['dob']));
 $doj = date("Y-m-d",strtotime($_POST['doj']));
 $date_of_birth = $dob;
 $date_of_join = $doj;
-
+}
 if(isset($_POST['done']))
 {
 $q2="update employee set name = '$name' , age = '$age' , salary = '$salary' , qualification = '$qualification' , date_of_birth = '$date_of_birth' , date_of_join = '$date_of_join' where id = $id";
@@ -108,7 +108,7 @@ mysqli_query($conn,$q2);
 header("location:dashboard.php");
 //header("refresh:0");
 }
-}
+
 if(isset($_POST['delete']))
 {
 	$_SESSION['id'] = $id;

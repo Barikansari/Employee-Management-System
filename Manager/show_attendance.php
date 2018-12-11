@@ -24,7 +24,7 @@ $res = mysqli_fetch_array($query);
 	<div class="col-lg-12"><br>
 		<div class="row"> 
 		<h3 class="col-lg-6">Attendance of <?php echo $res['name']; ?></h3>
-		<a href="emp_update.php?id=<?php echo $id; ?>" class="col-lg-3"><button class="btn btn-success col-lg-4" name="logout">back</button></a>
+		<a href="manage_attendance.php?id=<?php echo $id; ?>" class="col-lg-3"><button class="btn btn-success col-lg-4" name="logout">back</button></a>
 		<!--<a href="logout.php" class="col-lg-3"><button class="btn btn-success col-lg-4" name="logout">logout</button></a>-->
 
         </div>

@@ -5,7 +5,7 @@ if(!$_SESSION['username'])
 		header("location:../index.php");
 	}
 
-
+error_reporting(0);
 include 'conn.php';
 
 $id = $_GET['id'];
@@ -28,7 +28,7 @@ $min1 = $_POST['t_out2'];
 $sec1 = $_POST['t_out3'];
 $timein = "$hours:$min:$sec";
 $timeout = "$hours1:$min1:$sec1";
-$date = date("y-m-d");
+$date = date("d-m-y");
 
 $q="select * from employee where id = $id";
 $query = mysqli_query($conn,$q);
@@ -49,7 +49,12 @@ if (isset($_POST['add']))
 <head>
 	<title></title>
 	
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -116,7 +121,7 @@ if (isset($_POST['add']))
             <div class="row">
 			<div class="col-md-3"><button class="btn btn-success" name="Back">Back</button></div>
 			<div class="col-md-3"><button class="btn btn-success" name="add">add</button></div>
-			<div class="col-md-3"><button class="btn btn-success" name="view">attendance</button></div>
+			<div class="col-md-3"><button class="btn btn-success" name="view">View attendance</button></div>
 		    </div>
 		   <script type="text/javascript">
 
@@ -131,7 +136,7 @@ if (isset($_POST['add']))
 if (isset($_POST['view'])) {
 
 $_SESSION['id'] = $id;
-	header("location:attendance.php");
+	header("location:show_attendance.php");
 
 }
 		?>
@@ -139,6 +144,6 @@ $_SESSION['id'] = $id;
 		
 	</form>
 </div>
-<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+
 </body>
 </html>
